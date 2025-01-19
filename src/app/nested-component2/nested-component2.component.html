@@ -1,0 +1,21 @@
+<strong> nested-component2 works!</strong>
+
+<div >
+    <table border="1">
+        <tr>
+            <th>Delete</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr *ngFor="let product of productArr;let i=index">
+            <td><button (click)="deleteProduct(product.id)">Delete</button></td>
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td><input #test type="number" [defaultValue]="1" value="quantity" (click)="updateQuantity(i,test.valueAsNumber)">
+            </td>
+        </tr>
+    </table>
+</div>
